@@ -22,10 +22,8 @@ jobs:
       - name: NPM Install
         run: npm install    
 
-      - name: Install Trivy
-        run: |
-          # Scanning files
-          trivy fs . > trivyfs.txt  
+      - name: Trivy file scan
+        run:  trivy fs . > trivyfs.txt 
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # - uses: sonarsource/sonarqube-quality-gate-action@master
